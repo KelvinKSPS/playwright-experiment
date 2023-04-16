@@ -50,7 +50,7 @@ export default class InventoryPage extends BasicPage {
 
     // Works for name
     private async sortNameVerifier(reverse = false, allItems) {
-        const sortedList = structuredClone(allItems).sort();
+        const sortedList = JSON.parse(JSON.stringify((allItems))).sort();
         let result = true;
         for (let i = 0; i < allItems.length; i++) {
             /* check if the list is like the sorted one
