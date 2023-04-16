@@ -1,0 +1,26 @@
+{
+    "valid_credentials": {
+        "username": "standard_user",
+        "password": "secret_sauce"
+    },
+    "error_credentials": {
+        "username": "locked_out_user",
+        "password": "secret_sauce"
+    },
+    "store_url": "https://www.saucedemo.com/",
+    "first_item": {
+        "find_item_by_name": "sauce-labs-onesie",
+        "item_title": "Onesie",
+        "price": "7.99"
+    },
+    "second_item": {
+        "find_item_by_name": "sauce-labs-bike-light",
+        "item_title": "Bike Light",
+        "price": "9.99"
+    },
+    "valid_address": {
+        "first_name": "Tester",
+        "last_name": "Tustur",
+        "postal_code": "100001"
+    }
+}
