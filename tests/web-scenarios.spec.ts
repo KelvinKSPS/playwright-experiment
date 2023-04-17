@@ -122,7 +122,6 @@ test.describe('web-automation', () => {
         await homePage.clickOnLogin();
         // The validation should fail
         expect(await inventoryPage.validatePageUrl()).toBeTruthy();
-        // Add capabilities to your program so it can create reports with screenshots when something fails:
-        // Check afterEach hook
+        // Add capabilities to your program so it can create reports with screenshots when something fails - Check afterEach hook
     });
 });

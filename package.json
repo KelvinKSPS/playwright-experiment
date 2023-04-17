@@ -26,6 +26,7 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
-        "got": "11.8.6"
+        "got": "11.8.6",
+        "joi": "^17.9.1"
     }
 }

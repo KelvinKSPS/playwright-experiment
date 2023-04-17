@@ -1,8 +1,12 @@
 import got from 'got';
 import { test } from '@playwright/test';
+import Joi, { Schema } from 'joi';
 
 export default class BasicApi {
+    // Base URL for the API
     protected baseUrl: string;
+    // If it is false, the serialization and deserialization validation will be disabled
+    protected disableSchemaValidation = false;
 
     protected async execute(options) {
         const requestTitle = `[${options.method}] ${this.baseUrl}${options.url}, json: ${JSON.stringify(options.json) || 'none'}`;
@@ -15,7 +19,7 @@ export default class BasicApi {
             if ((resp.headers['content-type'] || '').startsWith('application/json')) {
                 resp.json = JSON.parse(resp.body);
             }
-             // Adding a custom step on reports
+            // Adding a custom step on reports
             test.info().attach(`[RESULT][STATUS=${resp.statusCode}]${requestTitle}`, { body: JSON.stringify(resp.json, null, 4) });
             return resp;
         } catch (e) {
@@ -29,7 +33,7 @@ export default class BasicApi {
                     statusCode: resp.statusCode,
                     json: resp.json,
                 };
-                 // Adding a custom step on reports
+                // Adding a custom step on reports
                 test.info().attach(`[RESULT][STATUS=${resp.statusCode}]${requestTitle}`, { body: JSON.stringify(errorBody, null, 4) });
                 throw errorBody;
             }
@@ -63,5 +67,15 @@ export default class BasicApi {
 
     protected async options(url: string, options = {}) {
         return this.execute({ url, ...options, method: 'OPTIONS' });
+    }
+
+    /**
+     * Validates if the received response can be deserialized using the schema
+     * @param json - api json response
+     * @param schema - schema to be used in validation
+     */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    protected assert(json: any, schema: Schema) {
+        Joi.assert(json, schema);
     }
 }
