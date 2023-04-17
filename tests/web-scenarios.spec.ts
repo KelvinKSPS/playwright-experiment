@@ -1,14 +1,13 @@
 import { test, expect } from '@playwright/test';
-import HomePage from '../pages/HomePage';
-import InventoryPage from '../pages/InventoryPage';
-import solveResources from '../utils/solve-resources';
-import CartPage from '../pages/CartPage';
-import CheckoutFirstPage from '../pages/CheckoutFirstPage';
-import CheckoutSecondPage from '../pages/CheckoutSecondPage';
-import CheckoutCompletePage from '../pages/CheckoutCompletePage';
+import HomePage from '../pages/home.page';
+import CartPage from '../pages/cart.page';
+import CheckoutFirstPage from '../pages/checkout-first.page';
+import CheckoutSecondPage from '../pages/checkout-second.page';
+import CheckoutCompletePage from '../pages/checkout-complete.page';
+import InventoryPage from '../pages/inventory.page';
 import { screenshotOnFailure } from '../utils/playwright-ui-helpers';
 
-const data = solveResources();
+import data from '../resources/web-data-mass.json';
 
 test.describe('web-automation', () => {
     test.beforeEach(async ({ page }) => {

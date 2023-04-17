@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import BasicPage from './BasicPage';
+import BasicPage from './basic.page';
 
 export default class CheckoutSecondPage extends BasicPage {
     constructor(public page: Page) {

@@ -1,5 +1,5 @@
 import { Page, expect } from '@playwright/test';
-import BasicPage from './BasicPage';
+import BasicPage from './basic.page';
 
 export default class InventoryPage extends BasicPage {
     constructor(public page: Page) {
@@ -50,7 +50,7 @@ export default class InventoryPage extends BasicPage {
 
     // Works for name
     private async sortNameVerifier(reverse = false, allItems) {
-        const sortedList = JSON.parse(JSON.stringify((allItems))).sort();
+        const sortedList = JSON.parse(JSON.stringify(allItems)).sort();
         let result = true;
         for (let i = 0; i < allItems.length; i++) {
             /* check if the list is like the sorted one
