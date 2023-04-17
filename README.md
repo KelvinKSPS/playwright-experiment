@@ -7,7 +7,6 @@ This is the readme document regarding the project built to solve the web and api
 The main goal of this project is using the newest Playwright framework for solving a web and api automation challenges. I usually solve these challenges with Java + Selenium (for web/mobile automation) and Javascript or Typescript + Mocha (for api automation) or try to do a combination more suitable for the team or group.
 
 ## Why the language and tools selected
-
 -   Typescript was selected due to a better Developer Experience on using Playwright;
 -   `got.js` library was used to perform the API requests. There are some great alternative tools to use here, like axios, fetch or even the playwright request itself, but the `timings` feature is great for the delays verifications on scenario `Validation 4`;
 -   `husky` is used for triggering the `precommit` verification. It triggers eslint and prettier to verify and beautify the code according to eslint standards. It is triggered by each commit locally (it is installed when cloning the repository). We can trigger this command by running `npm run format-code`.
@@ -35,7 +34,8 @@ ii) To run all tests on interactive mode, please run `npx playwright test --ui`.
 iii) To run only the web automated tests, please run `npx playwright test web`.
 iv) To run only the api automated tests, please run `npx playwright test api`.
 v) In order to check the daily automated tests run, please check the [daily runs](https://github.com/KelvinKSPS/playwright-experiment/actions/).
-vi) You can also trigger a run on github if you create any PR to the main branch at the github repository.
+vi) You can also trigger a run on github if you create any PR to the main branch at the github repository. The test report can be seen at the Artifacts section, like displayed on the next screenshot.
+![artifacts](readme_files/github_actions_artifacts.png)
 
 ## How to develop for it
 
