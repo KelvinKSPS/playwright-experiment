@@ -1,8 +1,8 @@
-import { Locators } from '../interfaces/locators.interface';
+import { ILocators } from '../interfaces/locators.interface';
 import { Page } from '@playwright/test';
 
 export default class BasicPage {
-    locators: Locators;
+    locators: ILocators;
     pageUrl: string;
     constructor(public page: Page) {}
 

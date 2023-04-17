@@ -1,9 +1,11 @@
 name: Playwright Tests
 on:
+    schedule:
+    - cron: "0 0 * * *"
     push:
-        branches: [main, master]
+        branches: [main]
     pull_request:
-        branches: [main, master]
+        branches: [main]
 jobs:
     web-automation:
         timeout-minutes: 60

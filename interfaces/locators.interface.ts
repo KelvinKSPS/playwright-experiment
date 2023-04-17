@@ -1,5 +1,5 @@
 import { Locator } from '@playwright/test';
 
-export interface Locators {
+export interface ILocators {
     [key: string]: Locator;
 }
