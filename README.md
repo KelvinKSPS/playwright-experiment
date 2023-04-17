@@ -7,7 +7,7 @@ The main goal of this project is using the newest Playwright framework for solvi
 ## Why the language and tools selected
 - Typescript was selected due to a better Developer Experience on using Playwright;
 - `got.js` library was used to perform the API requests. There are some great alternative tools to use here, like axios, fetch or even the playwright request itself, but the `timings` feature is great for the delays verifications on scenario `Validation 4`;
-- `husky` is used for triggering the `precommit` verification. It triggers eslint and prettier to verify and beautify the code according to eslint standards. It is triggered by each commit locally (it is installed when cloning or running the `npm ci` command).
+- `husky` is used for triggering the `precommit` verification. It triggers eslint and prettier to verify and beautify the code according to eslint standards. It is triggered by each commit locally (it is installed when cloning the repository). We can trigger this command by running `npm run format-code`.
 
 ## How to set it up
 ### Pre-requirement
